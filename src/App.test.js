@@ -29,3 +29,9 @@ test('test email input state', () => {
 	var wrapper = shallow(<App />);
 	expect(wrapper.state("emailvalue")).toBe("")
 });
+
+test('input name change test', () => {
+	var wrapper = shallow(<App />);
+     wrapper.find('.nameinput').simulate('change', {target: {value: 'klara'}});                         
+	expect(wrapper.state("namevalue")).toBe("klara")
+});
