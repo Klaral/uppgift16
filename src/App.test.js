@@ -24,3 +24,8 @@ test('test name input state', () => {
 	var wrapper = shallow(<App />);
 	expect(wrapper.state("namnvalue")).toBe("")
 });
+
+test('test email input state', () => {
+	var wrapper = shallow(<App />);
+	expect(wrapper.state("emailvalue")).toBe("")
+});
