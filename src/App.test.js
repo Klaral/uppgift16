@@ -19,3 +19,8 @@ test('test email input element', () => {
 	const greeting = <input placeholder='email'/>;
 	expect(wrapper.contains(greeting)).toBe(true)
 });
+
+test('test name input state', () => {
+	var wrapper = shallow(<App />);
+	expect(wrapper.state("namnvalue")).toBe("")
+});
