@@ -27,11 +27,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <input placeholder='name' className='nameinput' value={this.state.namevalue} onChange={this.handleImputName}/>
+       <input placeholder='name' className='nameinput' value={this.state.namevalue} onChange={this.handleImputName}/>
         <input placeholder='email' className= 'emailinput' value={this.state.emailvalue} onChange={this.handleImputEmail}/>
       </div>
     );
   }
         }
 
+
+
 export default App;
+
