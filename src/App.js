@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Button from './Button.js';
+import Form from './Form.js';
+
 
 class App extends Component {
     constructor(props){
@@ -26,7 +28,7 @@ class App extends Component {
         
     }
     
-    clearButton(event){
+    clearButton(){
       this.setState({
           nameValue: "",
           emailValue: ""
@@ -36,14 +38,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <input placeholder='name' className='nameinput' value={this.state.namevalue} onChange={this.handleImputName}/>
-        <input placeholder='email' className= 'emailinput' value={this.state.emailvalue} onChange={this.handleImputEmail}/>
+       <Form handleImputName={this.handleImputName}
+                handleImputEmail={this.handleImputEmail}
+                namnvalue={this.state.namnvalue}
+                emailvalue={this.state.emailvalue}/>
             
             <Button clearButton={this.clearButton}/>
       </div>
     );
   }
-        }
+    
+  
+    }
+        
 
 
 

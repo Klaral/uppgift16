@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import App from './App';
 import Button from './button';
+import Form from './Form';
 
 
 it('renders without crashing', () => {
@@ -11,12 +13,12 @@ it('renders without crashing', () => {
 });
 
 test('test input element', () => {
-	var wrapper = shallow(<App />);
+	var wrapper = shallow(<Form />);
 	expect(wrapper.find('.nameinput').length).toBe(1)
 });
 
 test('test email input element', () => {
-	var wrapper = shallow(<App />);
+	var wrapper = shallow(<Form />);
 	expect(wrapper.find('.emailinput').length).toBe(1)
 });
 
@@ -31,13 +33,13 @@ test('test email input state', () => {
 });
 
 test('input name change test', () => {
-	var wrapper = shallow(<App />);
+	var wrapper = mount(<App />);
      wrapper.find('.nameinput').simulate('change', {target: {value: 'klara'}});                         
 	expect(wrapper.state("namevalue")).toBe("klara")
 });
 
 test('input email change test', () => {
-	var wrapper = shallow(<App />);
+	var wrapper = mount(<App />);
      wrapper.find('.emailinput').simulate('change', {target: {value: 'klaral'}});                         
 	expect(wrapper.state("emailvalue")).toBe("klaral")
 });
